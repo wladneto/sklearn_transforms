@@ -34,7 +34,7 @@ class RemoverNotasMaioresQue10(BaseEstimator, TransformerMixin):
         df_data_2 = df_data_2.drop(df_remove.index)
         return df_data_2
     
-class PreencherDadosNulosOuEstranhos(BaseEstimator, TransformerMixin):
+class PreencherDados(BaseEstimator, TransformerMixin):
     def fit(self, X, y=None):
         return self
     

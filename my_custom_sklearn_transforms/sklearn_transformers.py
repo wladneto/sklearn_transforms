@@ -1,5 +1,4 @@
 from sklearn.base import BaseEstimator, TransformerMixin
-import math
 
 # All sklearn Transforms must have the `transform` and `fit` methods
 class DropColumns(BaseEstimator, TransformerMixin):
@@ -51,8 +50,6 @@ class PreencherDadosNulosOuEstranhos(BaseEstimator, TransformerMixin):
         df_data_3.update(df_data_3['REPROVACOES_MF'].fillna(0))
         df_data_3.update(df_data_3['REPROVACOES_GO'].fillna(0))
 
-
-
         # Setar NOTA_GO de acordo com media geral para as notas zeradas
         Filtro  = df_data_2['NOTA_GO'] > 0
         DS = df_data_2[Filtro]
@@ -94,6 +91,7 @@ class PreencherDadosNulosOuEstranhos(BaseEstimator, TransformerMixin):
         DS = df_data_2[Filtro]
         Media = DS['FALTAS'].mean()
         df_data_3.update(df_data_3['FALTAS'].fillna(Media))
+        
         return df_data_3
         
          

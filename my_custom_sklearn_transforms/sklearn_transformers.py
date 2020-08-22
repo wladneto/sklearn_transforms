@@ -16,8 +16,8 @@ class DropColumns(BaseEstimator, TransformerMixin):
         return data.drop(labels=self.columns, axis='columns')
     
 class RemoverNotasMaioresQue10(BaseEstimator, TransformerMixin):
-    def __init__(self, column):
-        self.columns = column
+    def __init__(self, columns):
+        self.columns = columns
 
     def fit(self, X, y=None):
         return self
